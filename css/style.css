@@ -1,8 +1,71 @@
+/* Fuentes: 
+
+Bradley Hand ITC
+Myanmar Text
+Harrington
+MV Boli
+*/
+
+
+@font-face {
+    font-family: "Bernard MT Condensed Regular";
+    src: url("../resources/BERNHC.TTF") format("truetype");
+}
+
+@font-face {
+    font-family: "Bradley Hand ITC";
+    src: url("../resources/bradhitc.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "MV Boli";
+    src: url("../resources/mvboli.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Harrington";
+    src: url("../resources/HARRINGT.TTF") format("truetype");
+}
+
+@font-face {
+    font-family: "Myanmar Text";
+    src: url("../resources/mmrtext.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Myanmar Text Bold";
+    src: url("../resources/mmrtextb.ttf") format("truetype");
+}
+
+
+
+/* Fuentes */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Bradley Hand ITC", sans-serif;
+}
+
+.harrington {
+    font-family: "Harrington", fantasy, sans-serif;
+}
+
+body, .mv-boli{
+    font-family: "MV Boli", "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.myanmar_bold {
+    font-family: "Myanmar Text Bold", sans-serif;
+}
+
+/* Fin de Fuentes */
+
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     border: 0;
+    font-family: "Myanmar Text", sans-serif;
 }
 
 *,
@@ -11,15 +74,22 @@
     box-sizing: inherit;
 }
 
+
+
 body, html, #wrapper {
     min-width: 100%;
     min-height: 100vh;
 }
 
 body {
-    font-family: "Times New Roman", Times, serif;
-    background-color: black;
+    background-color: #0E75BC;
     color: white;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 14px;
 }
 
 #wrapper {
@@ -32,65 +102,135 @@ main {
     margin: auto;
     max-width: 1024px;
     width: 100%;
-    padding: 32px 16px;
+    /*padding: 16px;*/
+    z-index: 5;
+    margin-top: 50px;
+    position: relative;
+
 }
 
+
+/* =================================
+            Fondos
+===================================  */
+
+#historia main, #mitos main, #contacto main {
+    background: transparent url("../img/fondo_truenos.svg") center center/cover no-repeat;
+}
+
+body#detalles, body#contacto {
+    background: transparent url("../img/fondo_tormenta.jpg") center center/cover no-repeat;
+}
+
+/* =================================
+            Header
+===================================  */
+
 header {
+    position: relative;
     text-align: center;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+    background: #fff url("../img/header_banner.png") center top/cover no-repeat;
+
+    /*tamaño*/
+    overflow: hidden;
+    padding-top: 16.45%;
 }
+
+header div {
+    z-index: 2;
+}
+
+header .capa_azul {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #0E76BC;
+    opacity: 0.4;
+}
+
+.busqueda {
+    height: 40px;
+    margin-bottom: 18px;
+}
+
+.busqueda input[type=text], .busqueda button {
+    height: 28px;
+    min-height: 28px;
+    border: none;
+    padding: 6px;
+    float: left;
+}
+
+.busqueda input[type=text] {
+    font-size: 17px;
+    width: 264px;
+}
+
+.busqueda button {
+    background: #444B4D;
+    font-size: 17px;
+    cursor: pointer;
+    width: 26px;
+
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.busqueda button:hover {
+    background: #3c4345;
+}  
+
+.icono_busqueda {
+    height: 17px;
+    width: 17px;
+    display: inline-block;
+}
+
+/* =================================
+            Footer
+===================================  */
 
 footer {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
-    color: black;
-    background-color: #F9F908;
-    padding: 4px 32px 21px 18px;
+    padding: 16px;
+    margin: auto;
+    width: 100%;
+    max-width: 1024px;
 }
 
-footer div {
-    text-align: center;
+.redes_sociales a {
+    margin-right: 10px;
 }
 
 h1 {
-    font-size: 90pt;
-    line-height: 108pt;    
-}
-
-h2 {
-    font-size: 54pt;
-    line-height: 64.8pt;
+    font-size: 48px;    
 }
 
 h3 {
-    font-size: 43pt;
-    line-height: 51.6pt;
-}
-
-h4 {
-    font-size: 41pt;
-    line-height: 49.2pt;
-}
-
-h5 {
-    font-size: 21pt;
-    line-height: 25.2pt;
+    font-size: 26px;
 }
 
 nav {
-    padding: 0 32px;
     z-index: 3;
 }
 
 nav ul {
     list-style-type: none;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+    width: 100%;
 }
 
-nav ul::after, .clearfix::after {
+.clearfix::after {
     content: "";
     clear: both;
     display: table;
@@ -99,185 +239,181 @@ nav ul::after, .clearfix::after {
 nav li {
     display: inline-block;
     list-style: none;
-    float: left;
+    position: relative;
+
 }
 
-nav a, nav a:visited, nav a:active, nav a:hover {
+nav a, nav a:visited, nav a:active {
+    color: #2F3692;
+    height: 20px;
     display: block;
-    font-size: 40px; /*36px;*/
     text-decoration: none;
-    padding: 0 70px;
-    padding-bottom: 24px;
     text-align: center;
-    color: white;
+    min-width: 113px;
+    padding-bottom: 12px;
+    background: white;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    font-family: "Bernard MT Condensed Regular", sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+
 }
 
-nav a {
-    border-bottom: 2px solid white;
-}
-
-nav a.actual {
-    border-bottom: 2px solid #F9F908;
-}
-
-nav li:not(:last-child) a {
-    border-right: 2px solid white;
-}
-
-p {
-    font-size: 21pt;
-    line-height: 25.2pt;
-}
-
-/* Fondos */
-
-body#historia {
-    background: #000000 url("../img/fondo_historia.jpg") center center/cover no-repeat;
-}
-
-body#personajes {
-    background: #000000 url("../img/fondo_personajes.jpg") center center/cover no-repeat;
-}
-
-body#contacto {
-    background: #000000 url("../img/fondo_contacto.jpg") center center/cover no-repeat;
-}
-
-/* Inicio */
-
-.imagen_inicio {
-    z-index: 1;
-    position: relative;
-    margin-top: -60px;
-}
-
-.titular_inicio {
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 876px;
-    position: absolute;
-    margin-top: -200px;
-    z-index: 6;
-}
-
-.sub_inicio {
-    font-size: 24pt;
-    line-height: 28.8pt;
-}
-
-.sinopsis {
-    position: relative;
-    z-index: 1;
-}
-
-.sinopsis::before {
-    z-index: 2;
+nav li::after {
     display: block;
-    content: "";
+    content: '';
+    z-index: 4;
+    pointer-events: none;
+    width: 25vw;
+    padding-top: 73%;
+    
+    background: transparent url("../img/menu_nube.svg") center top/cover no-repeat;
+    overflow: hidden;
+
     position: absolute;
-    width: 30%;
-    height: 100%;
+    left: -115%;
     top: 0;
-    left: 0;
-    background: transparent url("../img/inicio_marco_izq.png") left center/contain no-repeat;
 }
 
-.sinopsis::after {
-    z-index: 2;
-    display: block;
-    content: "";
-    position: absolute;
-    width: 30%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    background: transparent url("../img/inicio_marco_der.png") right center/contain no-repeat;
+@media only screen and (max-width: 1280px) {
+    nav li::after {
+        background: transparent url("../img/menu_nube.svg") center top/contain no-repeat;
+        position: absolute;
+    }
 }
 
-.sinopsis .contenedor_texto {
-    font-size: 38px;/*33px*/
-    /*line-height: 39.6pt;*/
-    margin: 48px auto;
-    width: 80%;
-    /*max-width: 678px;*/
-    word-wrap: break-word;
-    z-index: 5;
-    padding: 56px 0;
+nav a:hover {
+    background: #F4F4F4;
 }
 
-/* Historia */
-
-.historia_sol {
-    float: left;
-    padding-right: 32px;
-}
-
-.historia_luna {
-    float: right;
-    padding-left: 32px;
-}
-
-/*
-Personajes
-*/
-
-.personaje {
-    text-align: center;
-}
-
-.personaje img {
-    /*border: 4px solid white;*/
-    border-radius: 4px;
-}
-
-
-.personaje h3 {
-    font-size: 66.16pt;
-    line-height: 79.39pt;
-}
 
 /*
 Contacto
 */
 
-.media-fila {
-    display: inline-block;
-    width: 49%;
-}
-
-.media-fila input {
-    width: 90%;
-}
-
-#mensaje {
-    height: 200px;
-    width: 100%;
-}
-
 .btn, input[type=button], input[type=submit] {
-    background-color: #B5815E;
+    background-color: #0E75BC;
     border: none;
     color: white;
-    width: 270px;
-    padding: 18px 0 14px 0;
+    width: 180px;
+    padding: 6px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 36px;/*31pt;*/
-    margin: 32px 32px 48px auto;
+    font-size: 26px;/*31pt;*/
     display: block;
+    min-height: 10px;
 }
 
 input, textarea {
-    border: 2pt solid #B5815E;
-    min-height: 36px;
+    border: 3pt solid #939598;
+    min-height: 26px;
     background-color: white;
 }
 
 label {
-    font-size: 31pt;
-    line-height: 37.2pt;
+    font-size: 17px;
+    color: black;
+    line-height: 1.2;
     display: block;
-    margin-bottom: 24px;
-    margin-top: 46px;
+    margin-top: 0.8em;
 }
 
+/* =================================
+            Paginas
+===================================  */
+
+.div_blanco {
+    background-color: white;
+    color: black;
+}
+
+.rounded {
+    border-radius: 10px;
+}
+
+.p-8px {
+    padding: 8px;
+}
+
+.div_morado {
+    background-color: #262262;
+    color: white;
+}
+
+.div_celeste {
+    background-color: #8DD8F8;
+    color: #2B3990;
+}
+
+/* Index/Historia */
+
+#historia main {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#index_izq {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
+
+    min-height: 431px;
+    width: 438px;
+}
+
+#index_izq img {
+    position: absolute;
+    z-index: 4;
+    left: 83px;
+    top: 0;
+    height: 431px;
+}
+
+#index_izq .div_morado {
+    text-align: end;
+    width: 220px;
+    font-size: 20px;
+}
+
+#index_der {
+    width: 375px;
+}
+
+#index_der .div_celeste {
+    z-index: 4;
+    position: relative;
+    font-size: 22px;
+    width: 186px;
+}
+
+#index_der img {
+    position: absolute;
+    z-index: 2;
+    right: 85px;
+    top: 0;
+    height: 386px;
+    width: 253px;
+}
+
+/* Mitos */
+
+.mitos_div_izq {
+    width: 638px;
+    position: relative;
+    left: 90px;
+    z-index: 4;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#imagen_zeus_mitos {
+    width: 348px;
+    z-index: 3;
+    position: absolute;
+    right: 50px;
+    top: 0;
+}
